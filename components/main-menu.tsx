@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import { Code, Palette, Zap, Globe, Gamepad2, Server } from "lucide-react"
 
 interface MainMenuProps {
   onPlay: () => void
