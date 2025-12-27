@@ -15,17 +15,15 @@ An interactive web-based maze game that teaches pathfinding algorithms through h
 Features
 
 - Interactive maze navigation with real-time code execution
-- Multiple pathfinding algorithm visualizations
-- Progressive difficulty levels
-- Leaderboard system
-- Code editor with syntax highlighting
-- Performance analytics and feedback
+- Pathfinding algorithm visualization
+- Progressive difficulty levels (levels 2-4 are still in progress)
+- Leaderboard system (mock data used for now)
 
 Tech Stack
 
 Frontend
-- **Next.js 14** - React framework with App Router
-- **TypeScript** - Type-safe development
+- Next.js 14 ( React framework with App Router)
+- typeScript
 
 
 Game Engine
@@ -46,7 +44,7 @@ Installation
    cd pypath
    
 
-2. *nstall frontend dependencies
+2. install frontend dependencies
    ```bash
    # Using pnpm (recommended)
    pnpm install
@@ -55,17 +53,12 @@ Installation
    npm install
    ```
 
-3. **Install Python dependencies**
+3. install python dependencies
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Run the development server**
-   ```bash
+4. Run dev server
    pnpm dev
-   ```
-
-5. **Open your browser**
-   
    Navigate to [http://localhost:3000](http://localhost:3000)
 
