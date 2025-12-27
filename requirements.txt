@@ -1,0 +1,2 @@
+# Python dependencies for PyPath game engine
+pygame>=2.0.0

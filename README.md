@@ -42,8 +42,39 @@ An interactive web-based maze game that teaches pathfinding algorithms through h
 
 ## Getting Started
 
-1. Clone the repository
-2. Install dependencies: `pnpm install`
-3. Run the development server: `pnpm dev`
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+### Prerequisites
+- **Node.js** 18+ and **pnpm** (or npm)
+- **Python** 3.8+
+- **Git**
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/dshak1/pypath.git
+   cd pypath
+   ```
+
+2. **Install frontend dependencies**
+   ```bash
+   # Using pnpm (recommended)
+   pnpm install
+   
+   # Or using npm
+   npm install
+   ```
+
+3. **Install Python dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Run the development server**
+   ```bash
+   pnpm dev
+   ```
+
+5. **Open your browser**
+   
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
