@@ -293,7 +293,7 @@ export default function AlgorithmVisualizer({ onBack }: AlgorithmVisualizerProps
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <Button onClick={onBack} variant="outline" className="border-border bg-transparent">
-              ← Back
+              Back
             </Button>
             <div>
               <h1 className="text-3xl font-bold">Algorithm Visualizer</h1>

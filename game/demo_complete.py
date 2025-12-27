@@ -14,7 +14,7 @@ from engine.fog import FogOfWar, FogRenderer
 from engine.astar_viz import AStarVisualizer
 
 def demo_level_progression():
-    print("🎮 MAZE GAME LEVEL SYSTEM DEMO")
+    print("MAZE GAME LEVEL SYSTEM DEMO")
     print("=" * 60)
     
     # Initialize pygame
@@ -229,25 +229,25 @@ def demo_level_progression():
     pg.quit()
     
     print("\n" + "=" * 60)
-    print("🎮 MAZE GAME DEMO SUMMARY")
+    print("MAZE GAME DEMO SUMMARY")
     print("=" * 60)
     print("Educational Features:")
-    print("• 📚 Progressive difficulty (Easy → Intermediate → Advanced)")
-    print("• 🔒 Level unlocking system encourages completion")
-    print("• 🌫️ Fog of war prevents brute-force solutions")
-    print("• 🔍 A* visualization teaches algorithms")
-    print("• 💎 Treasure chest visual motivation")
-    print("• 🏆 Big score display with performance rating")
-    print("• 🎯 Step counting focus on efficiency")
-    print("• 📝 Level-specific code templates")
-    print("• 🎲 Randomized mazes for replayability")
+    print("•  Progressive difficulty (Easy → Intermediate → Advanced)")
+    print("•  Level unlocking system encourages completion")
+    print("•  Fog of war prevents brute-force solutions")
+    print("•  A* visualization teaches algorithms")
+    print("•  Treasure chest visual motivation")
+    print("•  Big score display with performance rating")
+    print("•  Step counting focus on efficiency")
+    print("•  Level-specific code templates")
+    print("•  Randomized mazes for replayability")
     print("\nReady for your hackathon demo! 🚀")
 
 if __name__ == "__main__":
     try:
         demo_level_progression()
     except Exception as e:
-        print(f"❌ Demo failed: {e}")
+        print(f"Demo failed: {e}")
         import traceback
         traceback.print_exc()
     finally:

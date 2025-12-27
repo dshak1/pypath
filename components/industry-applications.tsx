@@ -15,13 +15,13 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold pixel-text text-foreground">🏭 INDUSTRY APPLICATIONS</h1>
+          <h1 className="text-3xl font-bold pixel-text text-foreground">INDUSTRY APPLICATIONS</h1>
           <p className="text-sm pixel-text text-muted-foreground mt-2">
             See how real companies use these algorithms in production
           </p>
         </div>
         <Button onClick={onBack} variant="outline" className="retro-button pixel-text border-foreground bg-transparent">
-          ← BACK
+          BACK
         </Button>
       </div>
 
@@ -55,7 +55,7 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               {/* Google Maps */}
               <div className="p-4 bg-muted border border-accent/30 rounded">
                 <div className="flex items-center space-x-3 mb-3">
-                  <div className="text-3xl">🗺️</div>
+                  
                   <div>
                     <h3 className="text-lg font-bold pixel-text text-accent">Google Maps</h3>
                     <p className="text-xs pixel-text text-muted-foreground">Navigation & Route Planning</p>
@@ -75,7 +75,7 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               {/* Network Routing */}
               <div className="p-4 bg-muted border border-accent/30 rounded">
                 <div className="flex items-center space-x-3 mb-3">
-                  <div className="text-3xl">🌐</div>
+                  
                   <div>
                     <h3 className="text-lg font-bold pixel-text text-accent">Internet Routing (OSPF)</h3>
                     <p className="text-xs pixel-text text-muted-foreground">Network Packet Routing</p>
@@ -95,7 +95,7 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               {/* Uber/Lyft */}
               <div className="p-4 bg-muted border border-accent/30 rounded">
                 <div className="flex items-center space-x-3 mb-3">
-                  <div className="text-3xl">🚗</div>
+                  
                   <div>
                     <h3 className="text-lg font-bold pixel-text text-accent">Uber / Lyft</h3>
                     <p className="text-xs pixel-text text-muted-foreground">Driver-Passenger Matching</p>
@@ -129,7 +129,7 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               {/* Video Games */}
               <div className="p-4 bg-muted border border-accent/30 rounded">
                 <div className="flex items-center space-x-3 mb-3">
-                  <div className="text-3xl">🎮</div>
+                  
                   <div>
                     <h3 className="text-lg font-bold pixel-text text-accent">Video Game AI</h3>
                     <p className="text-xs pixel-text text-muted-foreground">NPC Pathfinding</p>
@@ -149,7 +149,7 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               {/* Robotics */}
               <div className="p-4 bg-muted border border-accent/30 rounded">
                 <div className="flex items-center space-x-3 mb-3">
-                  <div className="text-3xl">🤖</div>
+                  
                   <div>
                     <h3 className="text-lg font-bold pixel-text text-accent">Autonomous Robots</h3>
                     <p className="text-xs pixel-text text-muted-foreground">Warehouse & Delivery Robots</p>
@@ -243,7 +243,7 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               {/* Network Broadcasting */}
               <div className="p-4 bg-muted border border-accent/30 rounded">
                 <div className="flex items-center space-x-3 mb-3">
-                  <div className="text-3xl">📡</div>
+                  
                   <div>
                     <h3 className="text-lg font-bold pixel-text text-accent">Network Broadcasting</h3>
                     <p className="text-xs pixel-text text-muted-foreground">Peer-to-Peer Networks</p>

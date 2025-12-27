@@ -30,29 +30,29 @@ export default function AICodeReview({ code, levelId, steps, optimal }: AICodeRe
 
     // Efficiency analysis
     if (steps === optimal) {
-      feedback.push("✅ Perfect! You found the optimal path.")
+      feedback.push("Perfect! You found the optimal path.")
     } else if (steps <= optimal * 1.1) {
-      feedback.push("🎯 Excellent! Very close to optimal solution.")
+      feedback.push("Excellent! Very close to optimal solution.")
       suggestions.push("Try reducing unnecessary turns to reach optimal.")
     } else if (steps <= optimal * 1.3) {
-      feedback.push("👍 Good solution, but there's room for improvement.")
+      feedback.push("Good solution, but there's room for improvement.")
       suggestions.push("Analyze the maze structure to find shorter paths.")
       suggestions.push("Consider using diagonal thinking to reduce steps.")
     } else {
-      feedback.push("⚠️ Solution works but is inefficient.")
+      feedback.push("Solution works but is inefficient.")
       suggestions.push("Your path has significant redundancy.")
       suggestions.push("Try planning the entire route before coding.")
     }
 
     // Code quality analysis
     if (hasComments) {
-      feedback.push("📝 Good documentation with comments!")
+      feedback.push("Good documentation with comments!")
     } else {
       suggestions.push("Add comments to explain your algorithm strategy.")
     }
 
     if (lineCount < 5) {
-      feedback.push("🎨 Clean, concise code!")
+      feedback.push("Clean, concise code!")
     } else if (lineCount > 15) {
       suggestions.push("Consider combining forward() calls to simplify code.")
     }
@@ -127,7 +127,7 @@ export default function AICodeReview({ code, levelId, steps, optimal }: AICodeRe
 
           {review.suggestions.length > 0 && (
             <div>
-              <h4 className="text-sm font-bold pixel-text text-accent mb-2">💡 Suggestions</h4>
+              <h4 className="text-sm font-bold pixel-text text-accent mb-2">Suggestions</h4>
               <div className="space-y-1">
                 {review.suggestions.map((item, index) => (
                   <p key={index} className="text-sm pixel-text text-muted-foreground">
@@ -143,7 +143,7 @@ export default function AICodeReview({ code, levelId, steps, optimal }: AICodeRe
           onClick={analyzeCode}
           className="w-full px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold pixel-text rounded shadow-lg text-sm transition-all"
         >
-          🔄 RE-ANALYZE
+          RE-ANALYZE
         </button>
       </div>
     </Card>

@@ -67,14 +67,14 @@ export default function MainMenu({ onPlay, onLeaderboard, onVisualizer }: MainMe
           onClick={onPlay}
           className="retro-button h-12 text-lg pixel-text bg-primary hover:bg-primary/90 text-primary-foreground"
         >
-          ▶ PLAY GAME
+          PLAY GAME
         </Button>
 
         <Button
           onClick={onVisualizer}
           className="retro-button h-12 text-lg pixel-text bg-accent hover:bg-accent/90 text-accent-foreground"
         >
-          🔬 ALGORITHM LAB
+          ALGORITHM LAB
         </Button>
 
         <Button
@@ -84,7 +84,7 @@ export default function MainMenu({ onPlay, onLeaderboard, onVisualizer }: MainMe
           }}
           className="retro-button h-12 text-lg pixel-text bg-accent hover:bg-accent/90 text-accent-foreground font-bold transition-all"
         >
-          🏭 REAL-WORLD USES
+          REAL-WORLD USES
         </Button>
 
         <Button
@@ -92,27 +92,27 @@ export default function MainMenu({ onPlay, onLeaderboard, onVisualizer }: MainMe
           variant="outline"
           className="retro-button h-12 text-lg pixel-text border-2 border-foreground bg-transparent"
         >
-          📊 LEADERBOARD
+          LEADERBOARD
         </Button>
 
         <Button
           variant="outline"
           className="retro-button h-12 text-lg pixel-text border-2 border-foreground bg-transparent"
         >
-          ⚙ SETTINGS
+          SETTINGS
         </Button>
 
         <Button
           variant="outline"
           className="retro-button h-12 text-lg pixel-text border-2 border-foreground bg-transparent"
         >
-          ❓ HELP
+          HELP
         </Button>
       </div>
 
       {/* Footer */}
       <div className="text-center text-xs pixel-text text-muted-foreground">
-        <p>Press ▶ PLAY GAME to begin your real-world algorithm journey</p>
+        <p>Press PLAY GAME to begin your real-world algorithm journey</p>
         <p className="mt-2">© 2025 PyPath - Where Algorithms Meet Reality</p>
       </div>
     </div>

@@ -122,7 +122,7 @@ const createLevelMaze = (
 }
 
 class CodeExecutor {
-  private gameState: GameState
+  public gameState: GameState
   private commands: string[]
   private commandIndex: number
   private maxSteps: number
@@ -143,9 +143,9 @@ class CodeExecutor {
     for (const line of lines) {
       const trimmed = line.trim()
       if (trimmed && !trimmed.startsWith("#")) {
-        const forwardMatch = trimmed.match(/forward$$(\d+)$$/)
-        const leftMatch = trimmed.match(/left$$$$/)
-        const rightMatch = trimmed.match(/right$$$$/)
+        const forwardMatch = trimmed.match(/forward\((\d+)\)/)
+        const leftMatch = trimmed.match(/left\(\)/)
+        const rightMatch = trimmed.match(/right\(\)/)
 
         console.log("[v0] Checking line:", trimmed)
         console.log("[v0] Forward match:", forwardMatch)
@@ -182,25 +182,27 @@ class CodeExecutor {
 
     for (const command of this.commands) {
       if (this.gameState.agent.totalSteps >= this.maxSteps) {
-        this.gameState.output.push("❌ Maximum steps exceeded!")
+        this.gameState.output.push("Maximum steps exceeded!")
         return { success: false, steps: this.gameState.agent.totalSteps, output: this.gameState.output }
       }
 
       const result = this.executeCommand(command)
       if (!result.success) {
-        this.gameState.output.push(`❌ ${result.error}`)
+        this.gameState.output.push(`Error: ${result.error}`)
         return { success: false, steps: this.gameState.agent.totalSteps, output: this.gameState.output }
       }
 
       if (this.isAtGoal()) {
         this.gameState.isComplete = true
-        this.gameState.output.push("✅ Goal reached!")
+        this.gameState.output.push("Goal reached!")
+        console.log("[v0] GOAL REACHED! Agent at:", this.gameState.agent.row, this.gameState.agent.col, "Goal at:", this.gameState.goalPos.row, this.gameState.goalPos.col)
         return { success: true, steps: this.gameState.agent.totalSteps, output: this.gameState.output }
       }
     }
 
+    console.log("[v0] After all commands - Agent at:", this.gameState.agent.row, this.gameState.agent.col, "Goal at:", this.gameState.goalPos.row, this.gameState.goalPos.col)
     if (!this.isAtGoal()) {
-      this.gameState.output.push("❌ Code completed but goal not reached")
+      this.gameState.output.push("Code completed but goal not reached")
       return { success: false, steps: this.gameState.agent.totalSteps, output: this.gameState.output }
     }
 
@@ -255,6 +257,7 @@ class CodeExecutor {
 
   private isAtGoal(): boolean {
     const agent = this.gameState.agent
+    console.log("[v0] isAtGoal check - Agent:", agent.row, agent.col, "Goal:", this.gameState.goalPos.row, this.gameState.goalPos.col, "Match:", agent.row === this.gameState.goalPos.row && agent.col === this.gameState.goalPos.col)
     return agent.row === this.gameState.goalPos.row && agent.col === this.gameState.goalPos.col
   }
 }
@@ -272,7 +275,7 @@ const getLevelInfo = (levelId: number) => {
 const getStarterCode = (levelId: number) => {
   const codes = {
     1: `# Level 1: Basic Movement
-# Goal: Reach the 🎯 target!
+# Goal: Reach the target!
 # 
 # Available commands:
 # forward(n) - move forward n steps
@@ -319,50 +322,50 @@ const getLevelHints = (levelId: number) => {
   const hints = {
     1: {
       title: "Basic Movement",
-      realWorld: "🗺️ Google Maps Navigation",
+      realWorld: "Google Maps Navigation",
       tips: [
-        "🎯 Goal: Navigate to the target using simple commands",
-        "📝 Use forward(n) to move n steps ahead",
-        "🔄 Use left() and right() to turn 90 degrees",
-        "💡 Plan your path: count steps and turns needed",
-        "⚡ Optimal solution: 28 steps",
-        "🏭 Real Use: This is how GPS calculates basic routes!",
+        "Goal: Navigate to the target using simple commands",
+        "Use forward(n) to move n steps ahead",
+        "Use left() and right() to turn 90 degrees",
+        "Plan your path: count steps and turns needed",
+        "Optimal solution: 28 steps",
+        "Real Use: This is how GPS calculates basic routes!",
       ],
     },
     2: {
       title: "Dijkstra's Algorithm",
-      realWorld: "🌐 Internet Routing (OSPF)",
+      realWorld: "Internet Routing (OSPF)",
       tips: [
-        "🎯 Goal: Find shortest path considering all edges",
-        "📊 Dijkstra explores all possible paths systematically",
-        "🔍 Algorithm maintains distance to each node",
-        "💡 Think about weighted graph traversal",
-        "⚡ Focus on exploring neighbors efficiently",
-        "🏭 Real Use: Powers internet packet routing globally!",
+        "Goal: Find shortest path considering all edges",
+        "Dijkstra explores all possible paths systematically",
+        "Algorithm maintains distance to each node",
+        "Think about weighted graph traversal",
+        "Focus on exploring neighbors efficiently",
+        "Real Use: Powers internet packet routing globally!",
       ],
     },
     3: {
       title: "A* Search",
-      realWorld: "🎮 Video Game AI",
+      realWorld: "Video Game AI",
       tips: [
-        "🎯 Goal: Use heuristics for efficient pathfinding",
-        "🧠 A* combines actual cost + estimated cost to goal",
-        "📐 Manhattan distance is a good heuristic here",
-        "💡 Prioritize paths that seem most promising",
-        "⚡ Should be faster than Dijkstra with good heuristic",
-        "🏭 Real Use: NPCs in games like StarCraft use this!",
+        "Goal: Use heuristics for efficient pathfinding",
+        "A* combines actual cost + estimated cost to goal",
+        "Manhattan distance is a good heuristic here",
+        "Prioritize paths that seem most promising",
+        "Should be faster than Dijkstra with good heuristic",
+        "Real Use: NPCs in games like StarCraft use this!",
       ],
     },
     4: {
       title: "Minimum Spanning Tree",
-      realWorld: "📡 Network Design",
+      realWorld: "Network Design",
       tips: [
-        "🎯 Goal: Connect all reachable nodes efficiently",
-        "🌳 MST finds minimum cost to connect all nodes",
-        "🔗 Think about Kruskal's or Prim's algorithm",
-        "💡 Focus on avoiding cycles while connecting",
-        "⚡ Not about shortest path, but minimum connection cost",
-        "🏭 Real Use: Designing efficient network topologies!",
+        "Goal: Connect all reachable nodes efficiently",
+        "MST finds minimum cost to connect all nodes",
+        "Think about Kruskal's or Prim's algorithm",
+        "Focus on avoiding cycles while connecting",
+        "Not about shortest path, but minimum connection cost",
+        "Real Use: Designing efficient network topologies!",
       ],
     },
   }
@@ -391,6 +394,8 @@ export default function GameInterface({ levelId, onBackToLevels, onBackToMenu }:
     optimal: levelData.optimal,
     efficiency: "Ready",
   })
+  const [showHints, setShowHints] = useState(false)
+  const [showAIReview, setShowAIReview] = useState(false)
 
   const levelInfo = getLevelInfo(levelId)
   const levelHints = getLevelHints(levelId)
@@ -469,7 +474,7 @@ export default function GameInterface({ levelId, onBackToLevels, onBackToMenu }:
       const arrows = ["↑", "→", "↓", "←"]
       return arrows[gameState.agent.direction]
     }
-    if (row === gameState.goalPos.row && col === gameState.goalPos.col) return "🎯"
+    if (row === gameState.goalPos.row && col === gameState.goalPos.col) return ""
     return ""
   }
 
@@ -493,14 +498,14 @@ export default function GameInterface({ levelId, onBackToLevels, onBackToMenu }:
             variant="outline"
             className="retro-button pixel-text border-foreground bg-transparent"
           >
-            ← LEVELS
+            LEVELS
           </Button>
           <Button
             onClick={onBackToMenu}
             variant="outline"
             className="retro-button pixel-text border-foreground bg-transparent"
           >
-            🏠 MENU
+            MENU
           </Button>
         </div>
       </div>
@@ -513,21 +518,21 @@ export default function GameInterface({ levelId, onBackToLevels, onBackToMenu }:
           <Card className="flex-1 p-4 border border-primary/30 bg-card hover:border-primary/50 transition-colors shadow-lg">
             <div className="space-y-4 h-full flex flex-col">
               <div className="flex items-center justify-between">
-                <h2 className="text-lg font-bold pixel-text text-primary">💻 CODE EDITOR</h2>
+                <h2 className="text-lg font-bold pixel-text text-primary">CODE EDITOR</h2>
                 <div className="flex space-x-2">
                   <Button
                     onClick={executeCode}
                     disabled={isRunning}
                     className="retro-button pixel-text bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-lg transition-all"
                   >
-                    {isRunning ? "⏳ RUNNING..." : "▶ RUN CODE"}
+                    {isRunning ? "RUNNING..." : "RUN CODE"}
                   </Button>
                   <Button
                     onClick={resetLevel}
                     variant="outline"
                     className="retro-button pixel-text border-accent/50 bg-transparent text-accent hover:bg-accent/20 transition-all"
                   >
-                    🔄 RESET
+                    RESET
                   </Button>
                 </div>
               </div>
@@ -554,7 +559,7 @@ export default function GameInterface({ levelId, onBackToLevels, onBackToMenu }:
 
           {/* Hints Section */}
           <Card className="p-4 border border-accent/30 bg-card hover:border-accent/50 transition-colors shadow-lg">
-            <h2 className="text-lg font-bold pixel-text text-accent mb-3">💡 {levelHints.title} - HINTS</h2>
+            <h2 className="text-lg font-bold pixel-text text-accent mb-3">{levelHints.title} - HINTS</h2>
             <div className="space-y-2">
               {levelHints.tips.map((tip, index) => (
                 <div key={index} className="flex items-start space-x-2">
@@ -625,11 +630,11 @@ export default function GameInterface({ levelId, onBackToLevels, onBackToMenu }:
           <Card className="p-4 border-2 border-foreground">
             <h2 className="text-lg font-bold pixel-text mb-4">CONTROLS</h2>
             <div className="space-y-1 pixel-text text-xs text-muted-foreground">
-              <p>▶ RUN CODE - Execute your algorithm</p>
-              <p>🔄 RESET - Reset agent position</p>
-              <p>↑→↓← = Agent direction</p>
-              <p>🎯 = Goal position</p>
-              <p>⬛ = Wall</p>
+              <p>RUN CODE - Execute your algorithm</p>
+              <p>RESET - Reset agent position</p>
+              <p>Arrow = Agent direction</p>
+              <p>Target = Goal position</p>
+              <p>Block = Wall</p>
             </div>
           </Card>
         </div>

@@ -143,7 +143,7 @@ export default function LevelSelect({ onLevelSelect, onBack }: LevelSelectProps)
         variant="outline"
         className="retro-button h-12 text-lg pixel-text border-2 border-foreground w-48 bg-transparent"
       >
-        ← BACK TO MENU
+        BACK TO MENU
       </Button>
 
       {/* Instructions */}

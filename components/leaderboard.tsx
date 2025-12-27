@@ -91,9 +91,9 @@ export default function Leaderboard({ onBack }: LeaderboardProps) {
   }
 
   const getRankIcon = (rank: number) => {
-    if (rank === 1) return "🥇"
-    if (rank === 2) return "🥈"
-    if (rank === 3) return "🥉"
+    if (rank === 1) return "#1"
+    if (rank === 2) return "#2"
+    if (rank === 3) return "#3"
     return `#${rank}`
   }
 
@@ -205,7 +205,7 @@ export default function Leaderboard({ onBack }: LeaderboardProps) {
         onClick={onBack}
         className="retro-button h-12 text-lg pixel-text bg-primary hover:bg-primary/90 text-primary-foreground font-bold w-64 shadow-lg hover:shadow-xl transition-all hover:scale-105"
       >
-        ← BACK TO MENU
+        BACK TO MENU
       </Button>
 
       {/* Footer */}
