@@ -510,12 +510,11 @@ export default function GameInterface({ levelId, onBackToLevels, onBackToMenu }:
         </div>
       </div>
 
-      {/* Main Game Area */}
-      <div className="flex flex-1 gap-4">
-        {/* Left Side - Code Editor and Hints */}
-        <div className="flex-1 flex flex-col gap-4">
-          {/* Code Editor */}
-          <Card className="flex-1 p-4 border border-primary/30 bg-card hover:border-primary/50 transition-colors shadow-lg">
+      {/* Main Split Screen Layout */}
+      <div className="flex flex-1 gap-4 h-[calc(100vh-140px)]">
+        {/* Left Side - Code Editor (Full Height) */}
+        <div className="flex-1 flex flex-col">
+          <Card className="flex-1 p-4 border border-primary/30 bg-card hover:border-primary/50 transition-colors shadow-lg flex flex-col">
             <div className="space-y-4 h-full flex flex-col">
               <div className="flex items-center justify-between">
                 <h2 className="text-lg font-bold pixel-text text-primary">CODE EDITOR</h2>
@@ -540,7 +539,7 @@ export default function GameInterface({ levelId, onBackToLevels, onBackToMenu }:
               <Textarea
                 value={code}
                 onChange={(e) => setCode(e.target.value)}
-                className="flex-1 font-mono text-sm bg-slate-950 border-2 border-cyan-400 resize-none text-green-300 placeholder:text-green-600 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20"
+                className="flex-1 font-mono text-sm bg-slate-950 border-2 border-cyan-400 resize-none text-green-300 placeholder:text-green-600 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 min-h-[400px]"
                 placeholder="# Write your algorithm here..."
               />
 
@@ -554,28 +553,53 @@ export default function GameInterface({ levelId, onBackToLevels, onBackToMenu }:
                   ))}
                 </div>
               )}
+
+              {/* Collapsible Hints Section */}
+              <div className="border border-accent/30 rounded-lg overflow-hidden">
+                <button
+                  onClick={() => setShowHints(!showHints)}
+                  className="w-full p-3 bg-accent/10 hover:bg-accent/20 transition-colors flex items-center justify-between"
+                >
+                  <h3 className="text-sm font-bold pixel-text text-accent">
+                    {levelHints.title} - HINTS
+                  </h3>
+                  <span className="text-accent">{showHints ? "▼" : "▶"}</span>
+                </button>
+                {showHints && (
+                  <div className="p-3 bg-card space-y-2">
+                    {levelHints.tips.map((tip, index) => (
+                      <div key={index} className="flex items-start space-x-2">
+                        <span className="text-primary pixel-text text-xs mt-0.5">•</span>
+                        <p className="text-xs pixel-text text-muted-foreground leading-relaxed">{tip}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Collapsible AI Code Review */}
+              <div className="border border-primary/30 rounded-lg overflow-hidden">
+                <button
+                  onClick={() => setShowAIReview(!showAIReview)}
+                  className="w-full p-3 bg-primary/10 hover:bg-primary/20 transition-colors flex items-center justify-between"
+                >
+                  <h3 className="text-sm font-bold pixel-text text-primary">
+                    AI CODE REVIEW
+                  </h3>
+                  <span className="text-primary">{showAIReview ? "▼" : "▶"}</span>
+                </button>
+                {showAIReview && (
+                  <div className="p-3 bg-card">
+                    <AICodeReview code={code} levelId={levelId} steps={stats.steps} optimal={stats.optimal} />
+                  </div>
+                )}
+              </div>
             </div>
           </Card>
-
-          {/* Hints Section */}
-          <Card className="p-4 border border-accent/30 bg-card hover:border-accent/50 transition-colors shadow-lg">
-            <h2 className="text-lg font-bold pixel-text text-accent mb-3">{levelHints.title} - HINTS</h2>
-            <div className="space-y-2">
-              {levelHints.tips.map((tip, index) => (
-                <div key={index} className="flex items-start space-x-2">
-                  <span className="text-primary pixel-text text-xs mt-0.5">•</span>
-                  <p className="text-sm pixel-text text-muted-foreground leading-relaxed">{tip}</p>
-                </div>
-              ))}
-            </div>
-          </Card>
-
-          {/* AI Code Review Component */}
-          <AICodeReview code={code} levelId={levelId} steps={stats.steps} optimal={stats.optimal} />
         </div>
 
         {/* Right Side - Game View */}
-        <div className="flex flex-col space-y-4">
+        <div className="w-[400px] flex flex-col space-y-4">
           {/* Maze Display */}
           <Card className="p-4 border-2 border-foreground">
             <h2 className="text-lg font-bold pixel-text mb-4">MAZE</h2>
@@ -633,7 +657,7 @@ export default function GameInterface({ levelId, onBackToLevels, onBackToMenu }:
               <p>RUN CODE - Execute your algorithm</p>
               <p>RESET - Reset agent position</p>
               <p>Arrow = Agent direction</p>
-              <p>Target = Goal position</p>
+              <p>Red = Goal position</p>
               <p>Block = Wall</p>
             </div>
           </Card>
