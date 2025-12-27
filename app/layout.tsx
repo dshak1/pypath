@@ -5,8 +5,8 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'PyPath - Algorithm Learning Platform',
+  description: 'Interactive maze game for learning pathfinding algorithms',
   generator: 'v0.app',
 }
 
@@ -16,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="en" className="dark">
+      <body className={`font-mono bg-background text-foreground ${GeistSans.variable} ${GeistMono.variable}`}>
         {children}
         <Analytics />
       </body>

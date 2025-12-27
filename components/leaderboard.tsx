@@ -101,10 +101,10 @@ export default function Leaderboard({ onBack }: LeaderboardProps) {
     <div className="flex flex-col items-center justify-center min-h-screen space-y-6">
       {/* Header */}
       <div className="text-center space-y-4">
-        <h1 className="text-5xl font-bold pixel-text bg-gradient-to-r from-yellow-400 via-green-400 to-cyan-400 bg-clip-text text-transparent">
+        <h1 className="text-5xl font-bold pixel-text text-primary">
           LEADERBOARD
         </h1>
-        <p className="text-lg pixel-text text-yellow-300">Top Algorithm Masters</p>
+        <p className="text-lg pixel-text text-accent">Top Algorithm Masters</p>
       </div>
 
       {/* Level Filter */}
@@ -116,8 +116,8 @@ export default function Leaderboard({ onBack }: LeaderboardProps) {
             variant={selectedLevel === level ? "default" : "outline"}
             className={`retro-button pixel-text text-sm ${
               selectedLevel === level
-                ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold shadow-lg"
-                : "border-2 border-yellow-400 bg-transparent text-yellow-300 hover:bg-yellow-400/20"
+                ? "bg-primary text-primary-foreground font-bold shadow-lg"
+                : "border border-primary/50 bg-transparent text-primary hover:bg-primary/20"
             }`}
           >
             {level.replace("_", " ")}
@@ -126,10 +126,10 @@ export default function Leaderboard({ onBack }: LeaderboardProps) {
       </div>
 
       {/* Leaderboard */}
-      <Card className="w-full max-w-4xl bg-gradient-to-br from-slate-900 to-slate-800 border-4 border-yellow-400 rounded-lg shadow-2xl">
+      <Card className="w-full max-w-4xl bg-card border border-primary/30 rounded-lg shadow-2xl">
         <div className="retro-screen scanlines p-6">
           {/* Header Row */}
-          <div className="grid grid-cols-6 gap-4 pb-4 border-b-2 border-yellow-400/50 text-yellow-300 pixel-text text-sm font-bold">
+          <div className="grid grid-cols-6 gap-4 pb-4 border-b border-border text-accent pixel-text text-sm font-bold">
             <div>RANK</div>
             <div>PLAYER</div>
             <div>LEVEL</div>
@@ -145,32 +145,32 @@ export default function Leaderboard({ onBack }: LeaderboardProps) {
                 key={`${entry.name}-${entry.level}-${entry.rank}`}
                 className={`grid grid-cols-6 gap-4 py-3 px-2 rounded transition-all hover:scale-[1.02] ${
                   entry.rank <= 3
-                    ? "bg-gradient-to-r from-yellow-400/20 to-orange-500/20 border border-yellow-400/50 shadow-lg"
-                    : "hover:bg-yellow-400/10 hover:border hover:border-yellow-400/30"
+                    ? "bg-primary/20 border border-primary/50 shadow-lg"
+                    : "hover:bg-accent/10 hover:border hover:border-accent/30"
                 }`}
               >
-                <div className="text-yellow-300 pixel-text font-bold text-lg">{getRankIcon(entry.rank)}</div>
-                <div className="text-cyan-300 pixel-text truncate font-semibold">{entry.name}</div>
-                <div className="text-green-300 pixel-text">
+                <div className="text-accent pixel-text font-bold text-lg">{getRankIcon(entry.rank)}</div>
+                <div className="text-primary pixel-text truncate font-semibold">{entry.name}</div>
+                <div className="text-foreground pixel-text">
                   <Badge
                     variant="outline"
-                    className="pixel-text text-xs border-green-400 text-green-300 bg-green-400/10"
+                    className="pixel-text text-xs border-accent text-accent bg-accent/10"
                   >
                     {entry.level.replace("_", " ")}
                   </Badge>
                 </div>
-                <div className="text-blue-300 pixel-text font-mono">{entry.steps}</div>
-                <div className="text-purple-300 pixel-text font-mono">{entry.time}</div>
+                <div className="text-muted-foreground pixel-text font-mono">{entry.steps}</div>
+                <div className="text-muted-foreground pixel-text font-mono">{entry.time}</div>
                 <div className="flex items-center space-x-2">
                   <div className={`w-3 h-3 rounded-full ${getEfficiencyColor(entry.efficiency)} shadow-lg`}></div>
-                  <span className="text-yellow-300 pixel-text text-sm font-bold">{entry.efficiency}%</span>
+                  <span className="text-accent pixel-text text-sm font-bold">{entry.efficiency}%</span>
                 </div>
               </div>
             ))}
           </div>
 
           {filteredEntries.length === 0 && (
-            <div className="text-center py-8 text-yellow-300/70 pixel-text">
+            <div className="text-center py-8 text-muted-foreground pixel-text">
               No entries found for {selectedLevel} level
             </div>
           )}
@@ -179,37 +179,37 @@ export default function Leaderboard({ onBack }: LeaderboardProps) {
 
       {/* Stats Summary */}
       <div className="grid grid-cols-3 gap-4 w-full max-w-2xl">
-        <Card className="bg-gradient-to-br from-blue-600 to-purple-600 border-2 border-cyan-400 p-4 text-center shadow-lg">
-          <div className="text-2xl font-bold pixel-text text-white">{filteredEntries.length}</div>
-          <div className="text-sm pixel-text text-cyan-200">TOTAL PLAYERS</div>
+        <Card className="bg-card border border-primary/30 p-4 text-center shadow-lg">
+          <div className="text-2xl font-bold pixel-text text-primary">{filteredEntries.length}</div>
+          <div className="text-sm pixel-text text-muted-foreground">TOTAL PLAYERS</div>
         </Card>
-        <Card className="bg-gradient-to-br from-green-600 to-teal-600 border-2 border-green-400 p-4 text-center shadow-lg">
-          <div className="text-2xl font-bold pixel-text text-white">
+        <Card className="bg-card border border-accent/30 p-4 text-center shadow-lg">
+          <div className="text-2xl font-bold pixel-text text-accent">
             {filteredEntries.length > 0
               ? Math.round(filteredEntries.reduce((acc, e) => acc + e.efficiency, 0) / filteredEntries.length)
               : 0}
             %
           </div>
-          <div className="text-sm pixel-text text-green-200">AVG EFFICIENCY</div>
+          <div className="text-sm pixel-text text-muted-foreground">AVG EFFICIENCY</div>
         </Card>
-        <Card className="bg-gradient-to-br from-orange-600 to-red-600 border-2 border-orange-400 p-4 text-center shadow-lg">
-          <div className="text-2xl font-bold pixel-text text-white">
+        <Card className="bg-card border border-primary/30 p-4 text-center shadow-lg">
+          <div className="text-2xl font-bold pixel-text text-primary">
             {filteredEntries.length > 0 ? Math.min(...filteredEntries.map((e) => e.steps)) : 0}
           </div>
-          <div className="text-sm pixel-text text-orange-200">BEST STEPS</div>
+          <div className="text-sm pixel-text text-muted-foreground">BEST STEPS</div>
         </Card>
       </div>
 
       {/* Back Button */}
       <Button
         onClick={onBack}
-        className="retro-button h-12 text-lg pixel-text bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-300 hover:to-orange-400 text-black font-bold w-64 shadow-lg hover:shadow-xl transition-all hover:scale-105"
+        className="retro-button h-12 text-lg pixel-text bg-primary hover:bg-primary/90 text-primary-foreground font-bold w-64 shadow-lg hover:shadow-xl transition-all hover:scale-105"
       >
         ← BACK TO MENU
       </Button>
 
       {/* Footer */}
-      <div className="text-center text-xs pixel-text text-yellow-300/70">
+      <div className="text-center text-xs pixel-text text-muted-foreground">
         <p>Leaderboard updates every 24 hours</p>
       </div>
     </div>

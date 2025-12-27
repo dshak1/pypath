@@ -510,22 +510,22 @@ export default function GameInterface({ levelId, onBackToLevels, onBackToMenu }:
         {/* Left Side - Code Editor and Hints */}
         <div className="flex-1 flex flex-col gap-4">
           {/* Code Editor */}
-          <Card className="flex-1 p-4 border-2 border-yellow-400 bg-gradient-to-br from-slate-900 to-slate-800 shadow-lg">
+          <Card className="flex-1 p-4 border border-primary/30 bg-card hover:border-primary/50 transition-colors shadow-lg">
             <div className="space-y-4 h-full flex flex-col">
               <div className="flex items-center justify-between">
-                <h2 className="text-lg font-bold pixel-text text-yellow-300">💻 CODE EDITOR</h2>
+                <h2 className="text-lg font-bold pixel-text text-primary">💻 CODE EDITOR</h2>
                 <div className="flex space-x-2">
                   <Button
                     onClick={executeCode}
                     disabled={isRunning}
-                    className="retro-button pixel-text bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-white font-bold shadow-lg"
+                    className="retro-button pixel-text bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-lg transition-all"
                   >
                     {isRunning ? "⏳ RUNNING..." : "▶ RUN CODE"}
                   </Button>
                   <Button
                     onClick={resetLevel}
                     variant="outline"
-                    className="retro-button pixel-text border-orange-400 bg-transparent text-orange-300 hover:bg-orange-400/20"
+                    className="retro-button pixel-text border-accent/50 bg-transparent text-accent hover:bg-accent/20 transition-all"
                   >
                     🔄 RESET
                   </Button>
@@ -553,13 +553,13 @@ export default function GameInterface({ levelId, onBackToLevels, onBackToMenu }:
           </Card>
 
           {/* Hints Section */}
-          <Card className="p-4 border-2 border-blue-400 bg-gradient-to-br from-blue-900/50 to-purple-900/50 shadow-lg">
-            <h2 className="text-lg font-bold pixel-text text-blue-300 mb-3">💡 {levelHints.title} - HINTS</h2>
+          <Card className="p-4 border border-accent/30 bg-card hover:border-accent/50 transition-colors shadow-lg">
+            <h2 className="text-lg font-bold pixel-text text-accent mb-3">💡 {levelHints.title} - HINTS</h2>
             <div className="space-y-2">
               {levelHints.tips.map((tip, index) => (
                 <div key={index} className="flex items-start space-x-2">
-                  <span className="text-cyan-400 pixel-text text-xs mt-0.5">•</span>
-                  <p className="text-sm pixel-text text-cyan-200 leading-relaxed">{tip}</p>
+                  <span className="text-primary pixel-text text-xs mt-0.5">•</span>
+                  <p className="text-sm pixel-text text-muted-foreground leading-relaxed">{tip}</p>
                 </div>
               ))}
             </div>

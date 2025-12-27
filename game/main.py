@@ -166,18 +166,18 @@ forward(8)
                                 extra_steps = steps_taken - optimal_steps
                                 show_victory_screen = True  # Show big score display
                                 if extra_steps == 0:
-                                    execution_output = f"� PERFECT! Optimal solution in {steps_taken} steps!"
+                                    execution_output = f"PERFECT! Optimal solution in {steps_taken} steps!"
                                 else:
-                                    execution_output = f"🎉 SUCCESS! Goal reached in {steps_taken} steps (optimal: {optimal_steps})"
+                                    execution_output = f"SUCCESS! Goal reached in {steps_taken} steps (optimal: {optimal_steps})"
                             else:
-                                execution_output = f"✅ Code executed! Steps taken: {steps_taken}"
+                                execution_output = f"Code executed! Steps taken: {steps_taken}"
                             
                             stats["Steps Taken"] = steps_taken
                             stats["Efficiency"] = efficiency
                             print(f"Complete code block executed! Agent took {steps_taken} steps")
                             print(f"Agent final position: {agent.get_position()}")
                         else:
-                            execution_output = f"❌ Error: {error_msg}"
+                            execution_output = f"Error: {error_msg}"
                             stats["Efficiency"] = "Error"
                             print(f"Code execution failed: {error_msg}")
                         last_execution_time = current_time

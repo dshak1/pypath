@@ -52,11 +52,11 @@ else:
     print("="*50)
     
     if success:
-        print(f"✅ Success! {len(steps)} operations executed")
+        print(f"Success! {len(steps)} operations executed")
         print(f"Final position: {agent.get_position()}")
         print(f"At goal: {agent.at_goal()}")
     else:
-        print(f"❌ Error: {error}")
+        print(f"Error: {error}")
     
     print("\nExecution steps:")
     for i, step in enumerate(steps, 1):

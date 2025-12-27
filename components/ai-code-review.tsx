@@ -59,11 +59,11 @@ export default function AICodeReview({ code, levelId, steps, optimal }: AICodeRe
 
     // Algorithm-specific feedback
     if (levelId === 2) {
-      suggestions.push("💡 Dijkstra Tip: Think about exploring all neighbors systematically.")
+      suggestions.push("Dijkstra Tip: Think about exploring all neighbors systematically.")
     } else if (levelId === 3) {
-      suggestions.push("💡 A* Tip: Use Manhattan distance heuristic to guide your path.")
+      suggestions.push("A* Tip: Use Manhattan distance heuristic to guide your path.")
     } else if (levelId === 4) {
-      suggestions.push("💡 MST Tip: Focus on connecting nodes with minimum total edge weight.")
+      suggestions.push("MST Tip: Focus on connecting nodes with minimum total edge weight.")
     }
 
     const complexity =
@@ -83,15 +83,15 @@ export default function AICodeReview({ code, levelId, steps, optimal }: AICodeRe
 
   if (!review) {
     return (
-      <Card className="p-4 border-2 border-purple-400 bg-gradient-to-br from-purple-900/50 to-pink-900/50">
+      <Card className="p-4 border border-primary/30 bg-card hover:border-primary/50 transition-colors">
         <div className="text-center">
-          <h3 className="text-lg font-bold pixel-text text-purple-300 mb-2">🤖 AI CODE REVIEW</h3>
-          <p className="text-sm pixel-text text-purple-200 mb-4">Get intelligent feedback on your solution</p>
+          <h3 className="text-lg font-bold pixel-text text-primary mb-2">AI CODE REVIEW</h3>
+          <p className="text-sm pixel-text text-muted-foreground mb-4">Get intelligent feedback on your solution</p>
           <button
             onClick={analyzeCode}
-            className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white font-bold pixel-text rounded shadow-lg"
+            className="px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold pixel-text rounded shadow-lg transition-all"
           >
-            🔍 ANALYZE CODE
+            ANALYZE CODE
           </button>
         </div>
       </Card>
@@ -99,26 +99,26 @@ export default function AICodeReview({ code, levelId, steps, optimal }: AICodeRe
   }
 
   return (
-    <Card className="p-4 border-2 border-purple-400 bg-gradient-to-br from-purple-900/50 to-pink-900/50">
+    <Card className="p-4 border border-primary/30 bg-card hover:border-primary/50 transition-colors">
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-bold pixel-text text-purple-300">🤖 AI CODE REVIEW</h3>
-          <Badge className="pixel-text bg-gradient-to-r from-purple-500 to-pink-500 text-white">
+          <h3 className="text-lg font-bold pixel-text text-primary">AI CODE REVIEW</h3>
+          <Badge className="pixel-text bg-primary text-primary-foreground">
             Score: {review.score}%
           </Badge>
         </div>
 
         <div className="space-y-3">
           <div>
-            <h4 className="text-sm font-bold pixel-text text-pink-300 mb-2">📊 Complexity Analysis</h4>
-            <p className="text-sm pixel-text text-purple-200">{review.complexity}</p>
+            <h4 className="text-sm font-bold pixel-text text-accent mb-2">Complexity Analysis</h4>
+            <p className="text-sm pixel-text text-muted-foreground">{review.complexity}</p>
           </div>
 
           <div>
-            <h4 className="text-sm font-bold pixel-text text-pink-300 mb-2">✅ Feedback</h4>
+            <h4 className="text-sm font-bold pixel-text text-accent mb-2">Feedback</h4>
             <div className="space-y-1">
               {review.feedback.map((item, index) => (
-                <p key={index} className="text-sm pixel-text text-green-300">
+                <p key={index} className="text-sm pixel-text text-foreground/90">
                   {item}
                 </p>
               ))}
@@ -127,10 +127,10 @@ export default function AICodeReview({ code, levelId, steps, optimal }: AICodeRe
 
           {review.suggestions.length > 0 && (
             <div>
-              <h4 className="text-sm font-bold pixel-text text-pink-300 mb-2">💡 Suggestions</h4>
+              <h4 className="text-sm font-bold pixel-text text-accent mb-2">💡 Suggestions</h4>
               <div className="space-y-1">
                 {review.suggestions.map((item, index) => (
-                  <p key={index} className="text-sm pixel-text text-yellow-300">
+                  <p key={index} className="text-sm pixel-text text-muted-foreground">
                     • {item}
                   </p>
                 ))}
@@ -141,7 +141,7 @@ export default function AICodeReview({ code, levelId, steps, optimal }: AICodeRe
 
         <button
           onClick={analyzeCode}
-          className="w-full px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white font-bold pixel-text rounded shadow-lg text-sm"
+          className="w-full px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold pixel-text rounded shadow-lg text-sm transition-all"
         >
           🔄 RE-ANALYZE
         </button>

@@ -82,7 +82,7 @@ export default function MainMenu({ onPlay, onLeaderboard, onVisualizer }: MainMe
             // Navigate to industry applications
             window.dispatchEvent(new CustomEvent("navigate-industry"))
           }}
-          className="retro-button h-12 text-lg pixel-text bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 text-black font-bold"
+          className="retro-button h-12 text-lg pixel-text bg-accent hover:bg-accent/90 text-accent-foreground font-bold transition-all"
         >
           🏭 REAL-WORLD USES
         </Button>

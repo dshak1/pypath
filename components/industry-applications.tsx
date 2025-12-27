@@ -42,26 +42,26 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
         </TabsList>
 
         <TabsContent value="dijkstra" className="space-y-4 mt-6">
-          <Card className="p-6 border-2 border-yellow-400 bg-gradient-to-br from-slate-900 to-slate-800">
+          <Card className="p-6 border border-primary/30 bg-card">
             <div className="flex items-start justify-between mb-4">
               <div>
-                <h2 className="text-2xl font-bold pixel-text text-yellow-300">Dijkstra's Algorithm</h2>
-                <p className="text-sm pixel-text text-cyan-200 mt-2">Shortest path in weighted graphs</p>
+                <h2 className="text-2xl font-bold pixel-text text-primary">Dijkstra's Algorithm</h2>
+                <p className="text-sm pixel-text text-muted-foreground mt-2">Shortest path in weighted graphs</p>
               </div>
-              <Badge className="pixel-text bg-green-500 text-white">PRODUCTION READY</Badge>
+              <Badge className="pixel-text bg-accent text-accent-foreground">PRODUCTION READY</Badge>
             </div>
 
             <div className="space-y-6">
               {/* Google Maps */}
-              <div className="p-4 bg-slate-950 border-2 border-cyan-400 rounded">
+              <div className="p-4 bg-muted border border-accent/30 rounded">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="text-3xl">🗺️</div>
                   <div>
-                    <h3 className="text-lg font-bold pixel-text text-cyan-300">Google Maps</h3>
-                    <p className="text-xs pixel-text text-cyan-200">Navigation & Route Planning</p>
+                    <h3 className="text-lg font-bold pixel-text text-accent">Google Maps</h3>
+                    <p className="text-xs pixel-text text-muted-foreground">Navigation & Route Planning</p>
                   </div>
                 </div>
-                <p className="text-sm pixel-text text-green-300 leading-relaxed mb-3">
+                <p className="text-sm pixel-text text-foreground leading-relaxed mb-3">
                   Google Maps uses Dijkstra's algorithm to find the shortest driving route between two locations,
                   considering road distances as edge weights. Processes millions of route requests per second.
                 </p>
@@ -73,15 +73,15 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               </div>
 
               {/* Network Routing */}
-              <div className="p-4 bg-slate-950 border-2 border-cyan-400 rounded">
+              <div className="p-4 bg-muted border border-accent/30 rounded">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="text-3xl">🌐</div>
                   <div>
-                    <h3 className="text-lg font-bold pixel-text text-cyan-300">Internet Routing (OSPF)</h3>
-                    <p className="text-xs pixel-text text-cyan-200">Network Packet Routing</p>
+                    <h3 className="text-lg font-bold pixel-text text-accent">Internet Routing (OSPF)</h3>
+                    <p className="text-xs pixel-text text-muted-foreground">Network Packet Routing</p>
                   </div>
                 </div>
-                <p className="text-sm pixel-text text-green-300 leading-relaxed mb-3">
+                <p className="text-sm pixel-text text-foreground leading-relaxed mb-3">
                   OSPF (Open Shortest Path First) protocol uses Dijkstra to route internet packets through the most
                   efficient network path. Powers the backbone of internet infrastructure.
                 </p>
@@ -93,15 +93,15 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               </div>
 
               {/* Uber/Lyft */}
-              <div className="p-4 bg-slate-950 border-2 border-cyan-400 rounded">
+              <div className="p-4 bg-muted border border-accent/30 rounded">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="text-3xl">🚗</div>
                   <div>
-                    <h3 className="text-lg font-bold pixel-text text-cyan-300">Uber / Lyft</h3>
-                    <p className="text-xs pixel-text text-cyan-200">Driver-Passenger Matching</p>
+                    <h3 className="text-lg font-bold pixel-text text-accent">Uber / Lyft</h3>
+                    <p className="text-xs pixel-text text-muted-foreground">Driver-Passenger Matching</p>
                   </div>
                 </div>
-                <p className="text-sm pixel-text text-green-300 leading-relaxed mb-3">
+                <p className="text-sm pixel-text text-foreground leading-relaxed mb-3">
                   Ride-sharing apps use Dijkstra to calculate optimal pickup routes and match drivers with passengers
                   based on shortest travel time, considering traffic conditions.
                 </p>
@@ -116,26 +116,26 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
         </TabsContent>
 
         <TabsContent value="astar" className="space-y-4 mt-6">
-          <Card className="p-6 border-2 border-yellow-400 bg-gradient-to-br from-slate-900 to-slate-800">
+          <Card className="p-6 border border-primary/30 bg-card">
             <div className="flex items-start justify-between mb-4">
               <div>
-                <h2 className="text-2xl font-bold pixel-text text-yellow-300">A* Search Algorithm</h2>
-                <p className="text-sm pixel-text text-cyan-200 mt-2">Heuristic-based pathfinding</p>
+                <h2 className="text-2xl font-bold pixel-text text-primary">A* Search Algorithm</h2>
+                <p className="text-sm pixel-text text-muted-foreground mt-2">Heuristic-based pathfinding</p>
               </div>
-              <Badge className="pixel-text bg-green-500 text-white">PRODUCTION READY</Badge>
+              <Badge className="pixel-text bg-accent text-accent-foreground">PRODUCTION READY</Badge>
             </div>
 
             <div className="space-y-6">
               {/* Video Games */}
-              <div className="p-4 bg-slate-950 border-2 border-cyan-400 rounded">
+              <div className="p-4 bg-muted border border-accent/30 rounded">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="text-3xl">🎮</div>
                   <div>
-                    <h3 className="text-lg font-bold pixel-text text-cyan-300">Video Game AI</h3>
-                    <p className="text-xs pixel-text text-cyan-200">NPC Pathfinding</p>
+                    <h3 className="text-lg font-bold pixel-text text-accent">Video Game AI</h3>
+                    <p className="text-xs pixel-text text-muted-foreground">NPC Pathfinding</p>
                   </div>
                 </div>
-                <p className="text-sm pixel-text text-green-300 leading-relaxed mb-3">
+                <p className="text-sm pixel-text text-foreground leading-relaxed mb-3">
                   Games like StarCraft, League of Legends, and The Sims use A* for NPC movement. Calculates paths in
                   real-time for hundreds of units simultaneously with minimal CPU overhead.
                 </p>
@@ -147,15 +147,15 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               </div>
 
               {/* Robotics */}
-              <div className="p-4 bg-slate-950 border-2 border-cyan-400 rounded">
+              <div className="p-4 bg-muted border border-accent/30 rounded">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="text-3xl">🤖</div>
                   <div>
-                    <h3 className="text-lg font-bold pixel-text text-cyan-300">Autonomous Robots</h3>
-                    <p className="text-xs pixel-text text-cyan-200">Warehouse & Delivery Robots</p>
+                    <h3 className="text-lg font-bold pixel-text text-accent">Autonomous Robots</h3>
+                    <p className="text-xs pixel-text text-muted-foreground">Warehouse & Delivery Robots</p>
                   </div>
                 </div>
-                <p className="text-sm pixel-text text-green-300 leading-relaxed mb-3">
+                <p className="text-sm pixel-text text-foreground leading-relaxed mb-3">
                   Amazon warehouse robots and delivery drones use A* to navigate around obstacles and find efficient
                   paths. Processes sensor data in real-time to avoid collisions.
                 </p>
@@ -167,15 +167,15 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               </div>
 
               {/* GPS Navigation */}
-              <div className="p-4 bg-slate-950 border-2 border-cyan-400 rounded">
+              <div className="p-4 bg-muted border border-accent/30 rounded">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="text-3xl">📍</div>
                   <div>
-                    <h3 className="text-lg font-bold pixel-text text-cyan-300">Waze Navigation</h3>
-                    <p className="text-xs pixel-text text-cyan-200">Smart Route Planning</p>
+                    <h3 className="text-lg font-bold pixel-text text-accent">Waze Navigation</h3>
+                    <p className="text-xs pixel-text text-muted-foreground">Smart Route Planning</p>
                   </div>
                 </div>
-                <p className="text-sm pixel-text text-green-300 leading-relaxed mb-3">
+                <p className="text-sm pixel-text text-foreground leading-relaxed mb-3">
                   Waze uses A* with traffic heuristics to predict the fastest route, considering historical traffic
                   patterns and real-time user reports. Optimizes for time rather than distance.
                 </p>
@@ -190,26 +190,26 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
         </TabsContent>
 
         <TabsContent value="bfs" className="space-y-4 mt-6">
-          <Card className="p-6 border-2 border-yellow-400 bg-gradient-to-br from-slate-900 to-slate-800">
+          <Card className="p-6 border border-primary/30 bg-card">
             <div className="flex items-start justify-between mb-4">
               <div>
-                <h2 className="text-2xl font-bold pixel-text text-yellow-300">Breadth-First Search</h2>
-                <p className="text-sm pixel-text text-cyan-200 mt-2">Level-by-level exploration</p>
+                <h2 className="text-2xl font-bold pixel-text text-primary">Breadth-First Search</h2>
+                <p className="text-sm pixel-text text-muted-foreground mt-2">Level-by-level exploration</p>
               </div>
-              <Badge className="pixel-text bg-green-500 text-white">PRODUCTION READY</Badge>
+              <Badge className="pixel-text bg-accent text-accent-foreground">PRODUCTION READY</Badge>
             </div>
 
             <div className="space-y-6">
               {/* Social Networks */}
-              <div className="p-4 bg-slate-950 border-2 border-cyan-400 rounded">
+              <div className="p-4 bg-muted border border-accent/30 rounded">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="text-3xl">👥</div>
                   <div>
-                    <h3 className="text-lg font-bold pixel-text text-cyan-300">Facebook / LinkedIn</h3>
-                    <p className="text-xs pixel-text text-cyan-200">Friend Suggestions & Connections</p>
+                    <h3 className="text-lg font-bold pixel-text text-accent">Facebook / LinkedIn</h3>
+                    <p className="text-xs pixel-text text-muted-foreground">Friend Suggestions & Connections</p>
                   </div>
                 </div>
-                <p className="text-sm pixel-text text-green-300 leading-relaxed mb-3">
+                <p className="text-sm pixel-text text-foreground leading-relaxed mb-3">
                   Social networks use BFS to find "People You May Know" by exploring friend connections level by level.
                   Also used to calculate degrees of separation between users.
                 </p>
@@ -221,15 +221,15 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               </div>
 
               {/* Web Crawlers */}
-              <div className="p-4 bg-slate-950 border-2 border-cyan-400 rounded">
+              <div className="p-4 bg-muted border border-accent/30 rounded">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="text-3xl">🕷️</div>
                   <div>
-                    <h3 className="text-lg font-bold pixel-text text-cyan-300">Google Search Crawler</h3>
-                    <p className="text-xs pixel-text text-cyan-200">Web Indexing</p>
+                    <h3 className="text-lg font-bold pixel-text text-accent">Google Search Crawler</h3>
+                    <p className="text-xs pixel-text text-muted-foreground">Web Indexing</p>
                   </div>
                 </div>
-                <p className="text-sm pixel-text text-green-300 leading-relaxed mb-3">
+                <p className="text-sm pixel-text text-foreground leading-relaxed mb-3">
                   Google's web crawler uses BFS to discover and index web pages by following links systematically.
                   Crawls billions of pages to keep search results up-to-date.
                 </p>
@@ -241,15 +241,15 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               </div>
 
               {/* Network Broadcasting */}
-              <div className="p-4 bg-slate-950 border-2 border-cyan-400 rounded">
+              <div className="p-4 bg-muted border border-accent/30 rounded">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="text-3xl">📡</div>
                   <div>
-                    <h3 className="text-lg font-bold pixel-text text-cyan-300">Network Broadcasting</h3>
-                    <p className="text-xs pixel-text text-cyan-200">Peer-to-Peer Networks</p>
+                    <h3 className="text-lg font-bold pixel-text text-accent">Network Broadcasting</h3>
+                    <p className="text-xs pixel-text text-muted-foreground">Peer-to-Peer Networks</p>
                   </div>
                 </div>
-                <p className="text-sm pixel-text text-green-300 leading-relaxed mb-3">
+                <p className="text-sm pixel-text text-foreground leading-relaxed mb-3">
                   BitTorrent and blockchain networks use BFS to broadcast messages to all peers efficiently. Ensures
                   every node receives updates in minimum time.
                 </p>
@@ -264,26 +264,26 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
         </TabsContent>
 
         <TabsContent value="dfs" className="space-y-4 mt-6">
-          <Card className="p-6 border-2 border-yellow-400 bg-gradient-to-br from-slate-900 to-slate-800">
+          <Card className="p-6 border border-primary/30 bg-card">
             <div className="flex items-start justify-between mb-4">
               <div>
-                <h2 className="text-2xl font-bold pixel-text text-yellow-300">Depth-First Search</h2>
-                <p className="text-sm pixel-text text-cyan-200 mt-2">Deep exploration strategy</p>
+                <h2 className="text-2xl font-bold pixel-text text-primary">Depth-First Search</h2>
+                <p className="text-sm pixel-text text-muted-foreground mt-2">Deep exploration strategy</p>
               </div>
-              <Badge className="pixel-text bg-green-500 text-white">PRODUCTION READY</Badge>
+              <Badge className="pixel-text bg-accent text-accent-foreground">PRODUCTION READY</Badge>
             </div>
 
             <div className="space-y-6">
               {/* Maze Generation */}
-              <div className="p-4 bg-slate-950 border-2 border-cyan-400 rounded">
+              <div className="p-4 bg-muted border border-accent/30 rounded">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="text-3xl">🎲</div>
                   <div>
-                    <h3 className="text-lg font-bold pixel-text text-cyan-300">Procedural Generation</h3>
-                    <p className="text-xs pixel-text text-cyan-200">Game Level Design</p>
+                    <h3 className="text-lg font-bold pixel-text text-accent">Procedural Generation</h3>
+                    <p className="text-xs pixel-text text-muted-foreground">Game Level Design</p>
                   </div>
                 </div>
-                <p className="text-sm pixel-text text-green-300 leading-relaxed mb-3">
+                <p className="text-sm pixel-text text-foreground leading-relaxed mb-3">
                   Games like Minecraft and Spelunky use DFS to generate random mazes and dungeon layouts. Creates
                   unique, solvable levels procedurally for infinite replayability.
                 </p>
@@ -295,15 +295,15 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               </div>
 
               {/* File Systems */}
-              <div className="p-4 bg-slate-950 border-2 border-cyan-400 rounded">
+              <div className="p-4 bg-muted border border-accent/30 rounded">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="text-3xl">📁</div>
                   <div>
-                    <h3 className="text-lg font-bold pixel-text text-cyan-300">File System Search</h3>
-                    <p className="text-xs pixel-text text-cyan-200">Directory Traversal</p>
+                    <h3 className="text-lg font-bold pixel-text text-accent">File System Search</h3>
+                    <p className="text-xs pixel-text text-muted-foreground">Directory Traversal</p>
                   </div>
                 </div>
-                <p className="text-sm pixel-text text-green-300 leading-relaxed mb-3">
+                <p className="text-sm pixel-text text-foreground leading-relaxed mb-3">
                   Operating systems use DFS to search through directory trees. Commands like "find" and "grep" traverse
                   folders depth-first to locate files efficiently.
                 </p>
@@ -315,15 +315,15 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               </div>
 
               {/* Dependency Resolution */}
-              <div className="p-4 bg-slate-950 border-2 border-cyan-400 rounded">
+              <div className="p-4 bg-muted border border-accent/30 rounded">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="text-3xl">📦</div>
                   <div>
-                    <h3 className="text-lg font-bold pixel-text text-cyan-300">Package Managers</h3>
-                    <p className="text-xs pixel-text text-cyan-200">npm, pip, cargo</p>
+                    <h3 className="text-lg font-bold pixel-text text-accent">Package Managers</h3>
+                    <p className="text-xs pixel-text text-muted-foreground">npm, pip, cargo</p>
                   </div>
                 </div>
-                <p className="text-sm pixel-text text-green-300 leading-relaxed mb-3">
+                <p className="text-sm pixel-text text-foreground leading-relaxed mb-3">
                   Package managers use DFS to resolve dependency trees and detect circular dependencies. Ensures correct
                   installation order for software packages.
                 </p>
