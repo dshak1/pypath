@@ -361,7 +361,7 @@ export default function AlgorithmVisualizer({ onBack }: AlgorithmVisualizerProps
                 </div>
               </div>
 
-              <div className="algorithm-grid p-4 rounded-lg border border-border">
+              <div className="algorithm-grid p-4  border border-border">
                 <div className="grid gap-1" style={{ gridTemplateColumns: `repeat(${GRID_SIZE}, 1fr)` }}>
                   {grid.map((row, y) =>
                     row.map((node, x) => (
@@ -381,30 +381,30 @@ export default function AlgorithmVisualizer({ onBack }: AlgorithmVisualizerProps
               {/* Legend */}
               <div className="flex flex-wrap gap-4 mt-4 text-sm">
                 <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 rounded" style={{ backgroundColor: "oklch(0.6 0.15 140)" }}></div>
+                  <div className="w-4 h-4" style={{ backgroundColor: "oklch(0.6 0.15 140)" }}></div>
                   <span>Start</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 rounded" style={{ backgroundColor: "oklch(0.6 0.25 15)" }}></div>
+                  <div className="w-4 h-4" style={{ backgroundColor: "oklch(0.6 0.25 15)" }}></div>
                   <span>Goal</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 rounded" style={{ backgroundColor: "oklch(0.2 0 0)" }}></div>
+                  <div className="w-4 h-4" style={{ backgroundColor: "oklch(0.2 0 0)" }}></div>
                   <span>Wall</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <div
-                    className="w-4 h-4 rounded"
+                    className="w-4 h-4"
                     style={{ backgroundColor: ALGORITHMS[selectedAlgorithm].color }}
                   ></div>
                   <span>Exploring</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 rounded" style={{ backgroundColor: "oklch(0.3 0.1 240)" }}></div>
+                  <div className="w-4 h-4" style={{ backgroundColor: "oklch(0.3 0.1 240)" }}></div>
                   <span>Explored</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 rounded" style={{ backgroundColor: "oklch(0.7 0.2 140)" }}></div>
+                  <div className="w-4 h-4" style={{ backgroundColor: "oklch(0.7 0.2 140)" }}></div>
                   <span>Path</span>
                 </div>
               </div>
@@ -486,9 +486,9 @@ export default function AlgorithmVisualizer({ onBack }: AlgorithmVisualizerProps
                     {stats.executionTime > 0 ? Math.round((stats.nodesExplored / stats.executionTime) * 1000) : 0}
                   </span>
                 </div>
-                <div className="w-full bg-secondary rounded-full h-2">
+                <div className="w-full bg-secondary  h-2">
                   <div
-                    className="bg-primary h-2 rounded-full transition-all duration-300"
+                    className="bg-primary h-2  transition-all duration-300"
                     style={{ width: `${Math.min(100, (stats.nodesExplored / (GRID_SIZE * GRID_SIZE)) * 100)}%` }}
                   ></div>
                 </div>
@@ -515,7 +515,7 @@ export default function AlgorithmVisualizer({ onBack }: AlgorithmVisualizerProps
                   max="100"
                   value={speed}
                   onChange={(e) => setSpeed(Number(e.target.value))}
-                  className="w-full h-2 bg-secondary rounded-lg appearance-none cursor-pointer"
+                  className="w-full h-2 bg-secondary  appearance-none cursor-pointer"
                 />
                 <div className="flex justify-between text-xs text-muted-foreground">
                   <span>Slow</span>

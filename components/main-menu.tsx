@@ -15,9 +15,9 @@ export default function MainMenu({ onPlay, onLeaderboard, onVisualizer }: MainMe
     <div className="flex flex-col items-center justify-center min-h-screen space-y-8">
       {/* Retro Gaming Device */}
       <div className="relative">
-        <Card className="w-80 h-96 bg-secondary border-4 border-foreground rounded-lg shadow-2xl">
+        <Card className="w-80 h-96 bg-secondary border-4 border-foreground  shadow-2xl">
           {/* Screen */}
-          <div className="mx-6 mt-6 h-48 retro-screen rounded-sm scanlines flex items-center justify-center">
+          <div className="mx-6 mt-6 h-48 retro-screen  scanlines flex items-center justify-center">
             <div className="text-center space-y-2">
               <div className="text-primary text-2xl pixel-text animate-pulse">████████</div>
               <div className="text-primary text-sm pixel-text">PYPATH</div>
@@ -30,24 +30,24 @@ export default function MainMenu({ onPlay, onLeaderboard, onVisualizer }: MainMe
             {/* D-Pad */}
             <div className="relative w-16 h-16">
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-12 h-4 bg-foreground rounded-sm"></div>
+                <div className="w-12 h-4 bg-foreground "></div>
               </div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-4 h-12 bg-foreground rounded-sm"></div>
+                <div className="w-4 h-12 bg-foreground "></div>
               </div>
             </div>
 
             {/* Action Buttons */}
             <div className="flex space-x-3">
-              <div className="w-8 h-8 bg-accent rounded-full border-2 border-foreground"></div>
-              <div className="w-8 h-8 bg-destructive rounded-full border-2 border-foreground"></div>
+              <div className="w-8 h-8 bg-accent  border-2 border-foreground"></div>
+              <div className="w-8 h-8 bg-destructive  border-2 border-foreground"></div>
             </div>
           </div>
 
           {/* Start/Select */}
           <div className="flex justify-center space-x-4 mt-4">
-            <div className="w-12 h-3 bg-muted border border-foreground rounded-full"></div>
-            <div className="w-12 h-3 bg-muted border border-foreground rounded-full"></div>
+            <div className="w-12 h-3 bg-muted border border-foreground "></div>
+            <div className="w-12 h-3 bg-muted border border-foreground "></div>
           </div>
         </Card>
       </div>

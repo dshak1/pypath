@@ -53,7 +53,7 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
 
             <div className="space-y-6">
               {/* Google Maps */}
-              <div className="p-4 bg-muted border border-accent/30 rounded">
+              <div className="p-4 bg-muted border border-accent/30">
                 <div className="flex items-center space-x-3 mb-3">
                   
                   <div>
@@ -73,7 +73,7 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               </div>
 
               {/* Network Routing */}
-              <div className="p-4 bg-muted border border-accent/30 rounded">
+              <div className="p-4 bg-muted border border-accent/30">
                 <div className="flex items-center space-x-3 mb-3">
                   
                   <div>
@@ -93,7 +93,7 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               </div>
 
               {/* Uber/Lyft */}
-              <div className="p-4 bg-muted border border-accent/30 rounded">
+              <div className="p-4 bg-muted border border-accent/30">
                 <div className="flex items-center space-x-3 mb-3">
                   
                   <div>
@@ -127,7 +127,7 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
 
             <div className="space-y-6">
               {/* Video Games */}
-              <div className="p-4 bg-muted border border-accent/30 rounded">
+              <div className="p-4 bg-muted border border-accent/30">
                 <div className="flex items-center space-x-3 mb-3">
                   
                   <div>
@@ -147,7 +147,7 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               </div>
 
               {/* Robotics */}
-              <div className="p-4 bg-muted border border-accent/30 rounded">
+              <div className="p-4 bg-muted border border-accent/30">
                 <div className="flex items-center space-x-3 mb-3">
                   
                   <div>
@@ -167,7 +167,7 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               </div>
 
               {/* GPS Navigation */}
-              <div className="p-4 bg-muted border border-accent/30 rounded">
+              <div className="p-4 bg-muted border border-accent/30">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="text-3xl">📍</div>
                   <div>
@@ -201,7 +201,7 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
 
             <div className="space-y-6">
               {/* Social Networks */}
-              <div className="p-4 bg-muted border border-accent/30 rounded">
+              <div className="p-4 bg-muted border border-accent/30">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="text-3xl">👥</div>
                   <div>
@@ -221,7 +221,7 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               </div>
 
               {/* Web Crawlers */}
-              <div className="p-4 bg-muted border border-accent/30 rounded">
+              <div className="p-4 bg-muted border border-accent/30">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="text-3xl">🕷️</div>
                   <div>
@@ -241,7 +241,7 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               </div>
 
               {/* Network Broadcasting */}
-              <div className="p-4 bg-muted border border-accent/30 rounded">
+              <div className="p-4 bg-muted border border-accent/30">
                 <div className="flex items-center space-x-3 mb-3">
                   
                   <div>
@@ -275,7 +275,7 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
 
             <div className="space-y-6">
               {/* Maze Generation */}
-              <div className="p-4 bg-muted border border-accent/30 rounded">
+              <div className="p-4 bg-muted border border-accent/30">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="text-3xl">🎲</div>
                   <div>
@@ -295,7 +295,7 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               </div>
 
               {/* File Systems */}
-              <div className="p-4 bg-muted border border-accent/30 rounded">
+              <div className="p-4 bg-muted border border-accent/30">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="text-3xl">📁</div>
                   <div>
@@ -315,7 +315,7 @@ export default function IndustryApplications({ onBack }: IndustryApplicationsPro
               </div>
 
               {/* Dependency Resolution */}
-              <div className="p-4 bg-muted border border-accent/30 rounded">
+              <div className="p-4 bg-muted border border-accent/30">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="text-3xl">📦</div>
                   <div>

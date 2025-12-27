@@ -561,7 +561,7 @@ export default function GameInterface({ levelId, onBackToLevels, onBackToMenu }:
 
               {/* Output */}
               {gameState.output.length > 0 && (
-                <div className="p-3 bg-slate-950 border-2 border-red-400 rounded text-green-300">
+                <div className="p-3 bg-slate-950 border-2 border-red-400 text-green-300">
                   {gameState.output.map((line, index) => (
                     <p key={index} className="text-sm pixel-text font-mono">
                       {line}
@@ -571,7 +571,7 @@ export default function GameInterface({ levelId, onBackToLevels, onBackToMenu }:
               )}
 
               {/* Collapsible Hints Section */}
-              <div className="border border-accent/30 rounded-lg overflow-hidden">
+              <div className="border border-accent/30  overflow-hidden">
                 <button
                   onClick={() => setShowHints(!showHints)}
                   className="w-full p-3 bg-accent/10 hover:bg-accent/20 transition-colors flex items-center justify-between"
@@ -594,7 +594,7 @@ export default function GameInterface({ levelId, onBackToLevels, onBackToMenu }:
               </div>
 
               {/* Collapsible AI Code Review */}
-              <div className="border border-primary/30 rounded-lg overflow-hidden">
+              <div className="border border-primary/30  overflow-hidden">
                 <button
                   onClick={() => setShowAIReview(!showAIReview)}
                   className="w-full p-3 bg-primary/10 hover:bg-primary/20 transition-colors flex items-center justify-between"

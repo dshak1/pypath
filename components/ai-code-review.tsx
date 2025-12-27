@@ -86,7 +86,7 @@ export default function AICodeReview({ code, levelId, steps, optimal }: AICodeRe
         <p className="text-sm pixel-text text-muted-foreground mb-4">Get intelligent feedback on your solution</p>
         <button
           onClick={analyzeCode}
-          className="px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold pixel-text rounded shadow-lg transition-all"
+          className="px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold pixel-text shadow-lg transition-all"
         >
           ANALYZE CODE
         </button>
@@ -135,7 +135,7 @@ export default function AICodeReview({ code, levelId, steps, optimal }: AICodeRe
 
       <button
         onClick={analyzeCode}
-        className="w-full px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold pixel-text rounded shadow-lg text-sm transition-all"
+        className="w-full px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold pixel-text shadow-lg text-sm transition-all"
       >
         RE-ANALYZE
       </button>

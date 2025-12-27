@@ -126,7 +126,7 @@ export default function Leaderboard({ onBack }: LeaderboardProps) {
       </div>
 
       {/* Leaderboard */}
-      <Card className="w-full max-w-4xl bg-card border border-primary/30 rounded-lg shadow-2xl">
+      <Card className="w-full max-w-4xl bg-card border border-primary/30  shadow-2xl">
         <div className="retro-screen scanlines p-6">
           {/* Header Row */}
           <div className="grid grid-cols-6 gap-4 pb-4 border-b border-border text-accent pixel-text text-sm font-bold">
@@ -143,7 +143,7 @@ export default function Leaderboard({ onBack }: LeaderboardProps) {
             {filteredEntries.slice(0, 10).map((entry) => (
               <div
                 key={`${entry.name}-${entry.level}-${entry.rank}`}
-                className={`grid grid-cols-6 gap-4 py-3 px-2 rounded transition-all hover:scale-[1.02] ${
+                className={`grid grid-cols-6 gap-4 py-3 px-2 transition-all hover:scale-[1.02] ${
                   entry.rank <= 3
                     ? "bg-primary/20 border border-primary/50 shadow-lg"
                     : "hover:bg-accent/10 hover:border hover:border-accent/30"
@@ -162,7 +162,7 @@ export default function Leaderboard({ onBack }: LeaderboardProps) {
                 <div className="text-muted-foreground pixel-text font-mono">{entry.steps}</div>
                 <div className="text-muted-foreground pixel-text font-mono">{entry.time}</div>
                 <div className="flex items-center space-x-2">
-                  <div className={`w-3 h-3 rounded-full ${getEfficiencyColor(entry.efficiency)} shadow-lg`}></div>
+                  <div className={`w-3 h-3  ${getEfficiencyColor(entry.efficiency)} shadow-lg`}></div>
                   <span className="text-accent pixel-text text-sm font-bold">{entry.efficiency}%</span>
                 </div>
               </div>
