@@ -9,7 +9,7 @@
 
 An interactive web-based maze game that teaches pathfinding algorithms through hands-on coding challenges. Players write Python-like code to navigate mazes while learning fundamental computer science concepts.
 
-![Algorithm Visualizer Demo](./algvis.png)
+![Algorithm Visualizer Demo](./public/algvis.png)
 
 
 ## Features
