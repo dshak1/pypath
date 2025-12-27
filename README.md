@@ -8,7 +8,8 @@
 [![Vercel](https://img.shields.io/badge/Vercel-Deployed-black)](https://vercel.com/)
 
 An interactive web-based maze game that teaches pathfinding algorithms through hands-on coding challenges. Players write Python-like code to navigate mazes while learning fundamental computer science concepts.
-![Uploading image.png…]()
+
+![Algorithm Visualizer Demo](./algvis.png)
 
 
 ## Features
@@ -46,8 +47,3 @@ An interactive web-based maze game that teaches pathfinding algorithms through h
 3. Run the development server: `pnpm dev`
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Learn More
-
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Pathfinding Algorithms](https://en.wikipedia.org/wiki/Pathfinding)
-- [Pygame Documentation](https://www.pygame.org/docs/)
