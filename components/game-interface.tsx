@@ -75,7 +75,7 @@ const createLevelMaze = (
 
     startPos = { row: 1, col: 1 }
     goalPos = { row: 13, col: 13 }
-    optimal = 28 // Actual shortest path considering walls
+    optimal = 24 // True optimal: straight right 12, straight down 12
   } else if (levelId === 2) {
     // More complex maze for Dijkstra
     for (let i = 2; i < 13; i += 3) {
@@ -291,14 +291,10 @@ const getStarterCode = (levelId: number) => {
 # left()     - turn left 90 degrees  
 # right()    - turn right 90 degrees
 
-# Optimal solution - just hit RUN CODE!
-forward(4)
-right()
+# Optimal solution (24 steps):
 forward(12)
-left()
-forward(8)
 right()
-forward(4)`,
+forward(12)`,
     2: `# Level 2: Dijkstra's Algorithm
 # Find the shortest path considering all edges
 # This solution navigates around the wall pattern

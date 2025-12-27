@@ -9,7 +9,7 @@
 
 An interactive web-based maze game that teaches pathfinding algorithms through hands-on coding challenges. Players write Python-like code to navigate mazes while learning fundamental computer science concepts.
 
-## 🚀 Features
+## Features
 
 - Interactive maze navigation with real-time code execution
 - Multiple pathfinding algorithm visualizations
@@ -18,7 +18,7 @@ An interactive web-based maze game that teaches pathfinding algorithms through h
 - Code editor with syntax highlighting
 - Performance analytics and feedback
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - **Next.js 14** - React framework with App Router
@@ -37,14 +37,14 @@ An interactive web-based maze game that teaches pathfinding algorithms through h
 - **Vercel** - Hosting and deployment
 - **Git** - Version control
 
-## 🎮 Getting Started
+## Getting Started
 
 1. Clone the repository
 2. Install dependencies: `pnpm install`
 3. Run the development server: `pnpm dev`
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## 📚 Learn More
+## Learn More
 
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Pathfinding Algorithms](https://en.wikipedia.org/wiki/Pathfinding)

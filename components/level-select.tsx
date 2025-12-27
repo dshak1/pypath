@@ -81,8 +81,12 @@ export default function LevelSelect({ onLevelSelect, onBack }: LevelSelectProps)
         {levels.map((level) => (
           <Card
             key={level.id}
-            className="p-6 border-2 border-foreground hover:bg-secondary/50 transition-colors cursor-pointer retro-button"
-            onClick={() => onLevelSelect(level.id)}
+            className={`p-6 border-2 border-foreground transition-colors ${
+              level.id === 1 
+                ? "hover:bg-secondary/50 cursor-pointer retro-button" 
+                : "opacity-50 cursor-not-allowed"
+            }`}
+            onClick={() => level.id === 1 && onLevelSelect(level.id)}
           >
             <div className="space-y-4">
               {/* Level Header */}
@@ -110,10 +114,14 @@ export default function LevelSelect({ onLevelSelect, onBack }: LevelSelectProps)
               {/* Progress */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
-                  {level.completed ? (
-                    <span className="text-primary pixel-text">✓ COMPLETED</span>
+                  {level.id === 1 ? (
+                    level.completed ? (
+                      <span className="text-primary pixel-text">✓ COMPLETED</span>
+                    ) : (
+                      <span className="text-muted-foreground pixel-text">○ NOT STARTED</span>
+                    )
                   ) : (
-                    <span className="text-muted-foreground pixel-text">○ NOT STARTED</span>
+                    <span className="text-accent pixel-text">⏳ COMING SOON</span>
                   )}
                 </div>
 

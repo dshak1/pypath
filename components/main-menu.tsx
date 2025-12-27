@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Code, Palette, Zap, Globe, Gamepad2, Server } from "lucide-react"
 
 interface MainMenuProps {
   onPlay: () => void
@@ -75,16 +74,6 @@ export default function MainMenu({ onPlay, onLeaderboard, onVisualizer }: MainMe
           className="retro-button h-12 text-lg pixel-text bg-accent hover:bg-accent/90 text-accent-foreground"
         >
           ALGORITHM LAB
-        </Button>
-
-        <Button
-          onClick={() => {
-            // Navigate to industry applications
-            window.dispatchEvent(new CustomEvent("navigate-industry"))
-          }}
-          className="retro-button h-12 text-lg pixel-text bg-accent hover:bg-accent/90 text-accent-foreground font-bold transition-all"
-        >
-          REAL-WORLD USES
         </Button>
 
         <Button
