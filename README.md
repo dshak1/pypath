@@ -8,7 +8,7 @@
 [![Vercel](https://img.shields.io/badge/Vercel-Deployed-black)](https://vercel.com/)
 
 An interactive web-based maze game that teaches pathfinding algorithms through hands-on coding challenges. Players write Python-like code to navigate mazes while learning fundamental computer science concepts.
-![Uploading image.png…]()
+
 
 
 ## Features
