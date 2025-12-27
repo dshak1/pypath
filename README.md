@@ -12,7 +12,7 @@ An interactive web-based maze game that teaches pathfinding algorithms through h
 ![Algorithm Visualizer Demo](./public/algvis.png)
 
 
-## Features
+Features
 
 - Interactive maze navigation with real-time code execution
 - Multiple pathfinding algorithm visualizations
@@ -21,41 +21,32 @@ An interactive web-based maze game that teaches pathfinding algorithms through h
 - Code editor with syntax highlighting
 - Performance analytics and feedback
 
-## Tech Stack
+Tech Stack
 
-### Frontend
+Frontend
 - **Next.js 14** - React framework with App Router
 - **TypeScript** - Type-safe development
-- **Tailwind CSS v4** - Utility-first styling
-- **Radix UI** - Accessible component primitives
-- **Shadcn/ui** - Customizable component library
-- **Lucide React** - Icon system
 
-### Game Engine
-- **Python** - Core game logic
-- **Pygame** - Graphics and game loop
-- **Custom Engine** - Pathfinding algorithms and agent system
 
-### Development & Deployment
-- **Vercel** - Hosting and deployment
-- **Git** - Version control
+Game Engine
+- Python - Core game logic
+- Pygame - Graphics and game loop
+- Custom Engine - Pathfinding algorithms and agent system
 
-## Getting Started
+Getting Started
 
-### Prerequisites
-- **Node.js** 18+ and **pnpm** (or npm)
-- **Python** 3.8+
-- **Git**
+Prerequisites
+- Node.js 18+ and npm
+- Python 3.8+
 
-### Installation
+Installation
 
-1. **Clone the repository**
-   ```bash
+1. clone the repositor
    git clone https://github.com/dshak1/pypath.git
    cd pypath
-   ```
+   
 
-2. **Install frontend dependencies**
+2. *nstall frontend dependencies
    ```bash
    # Using pnpm (recommended)
    pnpm install
