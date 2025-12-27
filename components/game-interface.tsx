@@ -126,12 +126,14 @@ class CodeExecutor {
   private commands: string[]
   private commandIndex: number
   private maxSteps: number
+  private onStateChange?: (state: GameState) => void
 
-  constructor(gameState: GameState) {
+  constructor(gameState: GameState, onStateChange?: (state: GameState) => void) {
     this.gameState = gameState
     this.commands = []
     this.commandIndex = 0
     this.maxSteps = 100
+    this.onStateChange = onStateChange
   }
 
   parseCode(code: string): string[] {
@@ -190,6 +192,13 @@ class CodeExecutor {
       if (!result.success) {
         this.gameState.output.push(`Error: ${result.error}`)
         return { success: false, steps: this.gameState.agent.totalSteps, output: this.gameState.output }
+      }
+
+      // Notify state change for animation
+      if (this.onStateChange) {
+        this.onStateChange({ ...this.gameState })
+        // Add delay for animation (150ms per step)
+        await new Promise(resolve => setTimeout(resolve, 150))
       }
 
       if (this.isAtGoal()) {
@@ -419,9 +428,16 @@ export default function GameInterface({ levelId, onBackToLevels, onBackToMenu }:
 
     setGameState(resetState)
 
-    // Execute code with delay for visual effect
+    // Execute code with animation
     setTimeout(async () => {
-      const executor = new CodeExecutor(resetState)
+      const executor = new CodeExecutor(resetState, (newState) => {
+        setGameState(newState)
+        // Update stats in real-time during animation
+        setStats((prev) => ({
+          ...prev,
+          steps: newState.agent.totalSteps,
+        }))
+      })
       const result = await executor.executeCode(code)
 
       console.log("[v0] Execution result:", result)
@@ -441,7 +457,7 @@ export default function GameInterface({ levelId, onBackToLevels, onBackToMenu }:
       }))
 
       setIsRunning(false)
-    }, 1000)
+    }, 500)
   }
 
   const resetLevel = () => {
@@ -606,14 +622,17 @@ export default function GameInterface({ levelId, onBackToLevels, onBackToMenu }:
             <div className="retro-screen p-4 scanlines">
               <div className="grid grid-cols-15 gap-0.5 w-fit">
                 {gameState.maze.map((row, rowIndex) =>
-                  row.map((cell, colIndex) => (
-                    <div
-                      key={`${rowIndex}-${colIndex}`}
-                      className={`w-4 h-4 flex items-center justify-center text-xs ${getCellClass(rowIndex, colIndex)}`}
-                    >
-                      {getCellContent(rowIndex, colIndex)}
-                    </div>
-                  )),
+                  row.map((cell, colIndex) => {
+                    const isAgent = rowIndex === gameState.agent.row && colIndex === gameState.agent.col
+                    return (
+                      <div
+                        key={`${rowIndex}-${colIndex}`}
+                        className={`w-4 h-4 flex items-center justify-center text-xs transition-all duration-150 ${getCellClass(rowIndex, colIndex)} ${isAgent ? 'animate-hop scale-110' : ''}`}
+                      >
+                        {getCellContent(rowIndex, colIndex)}
+                      </div>
+                    )
+                  }),
                 )}
               </div>
             </div>

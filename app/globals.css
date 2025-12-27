@@ -252,3 +252,17 @@
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+/* Agent hop animation */
+@keyframes hop {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.15);
+  }
+}
+
+.animate-hop {
+  animation: hop 0.15s ease-in-out;
+}
